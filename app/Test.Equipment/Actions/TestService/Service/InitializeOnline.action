@@ -1,0 +1,9 @@
+{
+    "Service": "/Equipment/Services/TestService.service",
+    "_Type": "Action.Type.ODataService.Initialize",
+    "ShowActivityIndicator": true,
+    "OnFailure": "/Equipment/Actions/TestService/Service/InitializeOnlineFailureMessage.action",
+    "ActionResult": {
+        "_Name": "init"
+    }
+}

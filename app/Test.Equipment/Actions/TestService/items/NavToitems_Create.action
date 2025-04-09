@@ -1,0 +1,6 @@
+{
+    "ModalPageFullscreen": false,
+    "ModalPage": true,
+    "PageToOpen": "/Equipment/Pages/TestService_items/items_Create.page",
+    "_Type": "Action.Type.Navigation"
+}

@@ -1,0 +1,19 @@
+{
+    "_Type": "Action.Type.ODataService.DraftEnabled.Edit",
+    "Target": {
+        "Service": "/Equipment/Services/TestService.service",
+        "EntitySet": "employee",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "ShowActivityIndicator": true,
+    "ActionResult": {
+        "_Name": "update"
+    },
+    "OnSuccess": {
+        "Name": "/Equipment/Actions/UpdateEntitySuccessMessage.action",
+        "Properties": {
+            "Message": "Draft Edit"
+        }
+    },
+    "OnFailure": "/Equipment/Actions/UpdateEntityFailureMessage.action"
+}

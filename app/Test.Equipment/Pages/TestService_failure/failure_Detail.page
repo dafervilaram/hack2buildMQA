@@ -1,0 +1,92 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/Equipment/Services/TestService.service",
+		"EntitySet": "failure",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/Equipment/Rules/TestService/failure/NavTofailure_Edit.js",
+				"Position": "Right",
+				"SystemItem": "Edit",
+				"_Type": "Control.Type.ActionBarItem"
+			},
+			{
+				"OnPress": "/Equipment/Rules/TestService/failure/failure_DeleteConfirmation.js",
+				"Position": "Right",
+				"SystemItem": "Trash",
+				"_Type": "Control.Type.ActionBarItem"
+			}
+		],
+		"Caption": "$(L,failure_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ID}",
+						"Subhead": "{fecha}",
+						"BodyText": "",
+						"Footnote": "{sistema}",
+						"Description": "{comentarios}",
+						"StatusText": "{parte}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{falla}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "fecha",
+							"Value": "{fecha}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "comentarios",
+							"Value": "{comentarios}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "sistema",
+							"Value": "{sistema}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "parte",
+							"Value": "{parte}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "falla",
+							"Value": "{falla}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "status",
+							"Value": "{status}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "failure_Detail"
+}

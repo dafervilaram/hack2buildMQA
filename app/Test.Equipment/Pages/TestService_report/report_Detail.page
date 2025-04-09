@@ -1,0 +1,327 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/Equipment/Services/TestService.service",
+		"EntitySet": "report",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/Equipment/Rules/TestService/report/NavToreport_Edit.js",
+				"Position": "Right",
+				"SystemItem": "Edit",
+				"_Type": "Control.Type.ActionBarItem"
+			},
+			{
+				"OnPress": "/Equipment/Rules/TestService/report/report_DeleteConfirmation.js",
+				"Position": "Right",
+				"SystemItem": "Trash",
+				"_Type": "Control.Type.ActionBarItem"
+			}
+		],
+		"Caption": "$(L,report_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ID}",
+						"Subhead": "{fecha}",
+						"BodyText": "",
+						"Footnote": "{ubicacion}",
+						"Description": "{kilometraje_Horometro}",
+						"StatusText": "{aceite_y_combustible}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{liquido_refrigerante}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "fecha",
+							"Value": "{fecha}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "kilometraje_Horometro",
+							"Value": "{kilometraje_Horometro}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ubicacion",
+							"Value": "{ubicacion}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "aceite_y_combustible",
+							"Value": "{aceite_y_combustible}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "liquido_refrigerante",
+							"Value": "{liquido_refrigerante}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "nivel_agua",
+							"Value": "{nivel_agua}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "liquido_frenos",
+							"Value": "{liquido_frenos}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "tapa_radiador_tanque",
+							"Value": "{tapa_radiador_tanque}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Cables_correas_mangueras",
+							"Value": "{Cables_correas_mangueras}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Bateria_cables_bornes",
+							"Value": "{Bateria_cables_bornes}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "suspencion_gatos_muelles_anclajes",
+							"Value": "{suspencion_gatos_muelles_anclajes}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "luces_bajas",
+							"Value": "{luces_bajas}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "luces_altas",
+							"Value": "{luces_altas}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "luces_internas",
+							"Value": "{luces_internas}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "direccionales_frente",
+							"Value": "{direccionales_frente}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "direccionales_atras",
+							"Value": "{direccionales_atras}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "faros_freno",
+							"Value": "{faros_freno}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "faros_exploradoras",
+							"Value": "{faros_exploradoras}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "luces_parqueo",
+							"Value": "{luces_parqueo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "extintor",
+							"Value": "{extintor}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "gato_cruceta_copa_perno",
+							"Value": "{gato_cruceta_copa_perno}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "linterna_lamparas",
+							"Value": "{linterna_lamparas}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "kit_herramientas_completa",
+							"Value": "{kit_herramientas_completa}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "kit_derrames_completo",
+							"Value": "{kit_derrames_completo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "cables_arranque",
+							"Value": "{cables_arranque}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "senalizacion",
+							"Value": "{senalizacion}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "estado_llantas_rines",
+							"Value": "{estado_llantas_rines}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "llantas_repuesto_fijas",
+							"Value": "{llantas_repuesto_fijas}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "labrado_llantas",
+							"Value": "{labrado_llantas}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "espejos_laterales",
+							"Value": "{espejos_laterales}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "parabrisas_escobillas",
+							"Value": "{parabrisas_escobillas}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "puertas_ventanas",
+							"Value": "{puertas_ventanas}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "latoneria_pintura",
+							"Value": "{latoneria_pintura}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "vidrios",
+							"Value": "{vidrios}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "inyectores_agua_parabrisas",
+							"Value": "{inyectores_agua_parabrisas}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "antena_gps_otros",
+							"Value": "{antena_gps_otros}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "identificacion_carga",
+							"Value": "{identificacion_carga}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "aire_acondicionado",
+							"Value": "{aire_acondicionado}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "asientos_apoya_cabezas_tapiceria",
+							"Value": "{asientos_apoya_cabezas_tapiceria}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "elevavidrios_manivelas",
+							"Value": "{elevavidrios_manivelas}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "cinturones_seguridad",
+							"Value": "{cinturones_seguridad}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "puertas",
+							"Value": "{puertas}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "bocina_pito",
+							"Value": "{bocina_pito}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "alarma_retroceso",
+							"Value": "{alarma_retroceso}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "botiquin",
+							"Value": "{botiquin}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "asa",
+							"Value": "{asa}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "placas",
+							"Value": "{placas}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "cuerpo",
+							"Value": "{cuerpo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "quijadas_laterales",
+							"Value": "{quijadas_laterales}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "alineamiento",
+							"Value": "{alineamiento}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "mantenimiento",
+							"Value": "{mantenimiento}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "comentarios",
+							"Value": "{comentarios}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "status",
+							"Value": "{status}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "report_Detail"
+}

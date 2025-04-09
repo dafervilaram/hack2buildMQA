@@ -1,0 +1,23 @@
+{
+    "CreateLinks": [],
+    "OnFailure": "/Equipment/Actions/CreateEntityFailureMessage.action",
+    "OnSuccess": "/Equipment/Actions/CreateEntitySuccessMessage.action",
+    "Properties": {
+        "inventoryNumber": "#Control:inventoryNumber/#Value",
+        "assetManufacturerName": "#Control:assetManufacturerName/#Value",
+        "manufacturerPartTypeName": "#Control:manufacturerPartTypeName/#Value",
+        "functionalLocation": "#Control:functionalLocation/#Value",
+        "equipment": "#Control:equipment/#Value",
+        "technicalObjectType": "#Control:technicalObjectType/#Value",
+        "catalog": "#Control:catalog/#Value",
+        "puestotrabajo": "#Control:puestotrabajo/#Value"
+    },
+    "Target": {
+        "EntitySet": "equipment",
+        "Service": "/Equipment/Services/TestService.service"
+    },
+    "ActionResult": {
+        "_Name": "create"
+    },
+    "_Type": "Action.Type.ODataService.CreateEntity"
+}

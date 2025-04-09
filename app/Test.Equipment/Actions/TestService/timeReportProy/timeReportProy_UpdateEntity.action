@@ -1,0 +1,25 @@
+{
+    "_Type": "Action.Type.ODataService.UpdateEntity",
+    "Target": {
+        "EntitySet": "timeReportProy",
+        "Service": "/Equipment/Services/TestService.service",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "Properties": {
+        "date": "#Control:date/#Value",
+        "initialTime": "#Control:initialTime/#Value",
+        "finalTime": "#Control:finalTime/#Value",
+        "personas": "#Control:personas/#Value",
+        "equipos": "#Control:equipos/#Value",
+        "comments": "#Control:comments/#Value",
+        "Tiempo": "#Control:Tiempo/#Value",
+        "image": "#Control:image/#Value",
+        "IsFinalConfirmation": "#Control:IsFinalConfirmation/#Value"
+    },
+    "UpdateLinks": [],
+    "ActionResult": {
+        "_Name": "update"
+    },
+    "OnSuccess": "/Equipment/Actions/UpdateEntitySuccessMessage.action",
+    "OnFailure": "/Equipment/Actions/UpdateEntityFailureMessage.action"
+}

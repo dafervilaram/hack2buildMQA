@@ -1,0 +1,24 @@
+{
+    "CreateLinks": [],
+    "OnFailure": "/Equipment/Actions/CreateEntityFailureMessage.action",
+    "OnSuccess": "/Equipment/Actions/CreateEntitySuccessMessage.action",
+    "Properties": {
+        "date": "#Control:date/#Value",
+        "initialTime": "#Control:initialTime/#Value",
+        "finalTime": "#Control:finalTime/#Value",
+        "personas": "#Control:personas/#Value",
+        "equipos": "#Control:equipos/#Value",
+        "comments": "#Control:comments/#Value",
+        "Tiempo": "#Control:Tiempo/#Value",
+        "image": "#Control:image/#Value",
+        "IsFinalConfirmation": "#Control:IsFinalConfirmation/#Value"
+    },
+    "Target": {
+        "EntitySet": "timeReportProy",
+        "Service": "/Equipment/Services/TestService.service"
+    },
+    "ActionResult": {
+        "_Name": "create"
+    },
+    "_Type": "Action.Type.ODataService.CreateEntity"
+}

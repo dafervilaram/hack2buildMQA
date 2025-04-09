@@ -1,0 +1,6 @@
+{
+    "ModalPageFullscreen": false,
+    "ModalPage": true,
+    "PageToOpen": "/Equipment/Pages/TestService_report/report_Edit.page",
+    "_Type": "Action.Type.Navigation"
+}

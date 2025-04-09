@@ -1,0 +1,13 @@
+{
+    "Target": {
+        "EntitySet": "Cliente",
+        "Service": "/Cliente/Services/TestService.service",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "OnSuccess": "/Cliente/Actions/DeleteEntitySuccessMessage.action",
+    "OnFailure": "/Cliente/Actions/DeleteEntityFailureMessage.action",
+    "ActionResult": {
+        "_Name": "delete"
+    },
+    "_Type": "Action.Type.ODataService.DeleteEntity"
+}

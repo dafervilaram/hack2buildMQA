@@ -1,0 +1,6 @@
+{
+    "ModalPageFullscreen": false,
+    "ModalPage": true,
+    "PageToOpen": "/Cliente/Pages/TestService_Cliente/Cliente_Edit.page",
+    "_Type": "Action.Type.Navigation"
+}

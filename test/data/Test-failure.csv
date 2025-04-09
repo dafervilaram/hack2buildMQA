@@ -1,0 +1,6 @@
+ID;fecha;comentarios;sistema;parte;falla;status;equipo_inventoryNumber;sistemas_ID;partes_ID;fallas_ID
+16961293-8446-46d9-b10d-a49de1c71677;2025-04-08T17:31:39-0500;comentarios5873;sistema5680;parte2508;falla1908;true;inventoryNumber5619;ID7206;ID9839;ID7526
+099c9cae-d643-43a7-9a73-a3b05e1a93d8;2025-04-08T17:31:39-0500;comentarios5541;sistema8667;parte7320;falla514;true;inventoryNumber2398;ID7206;ID128;ID2663
+59b05c83-c703-4fdb-80d2-de511c43644e;2025-04-08T17:31:39-0500;comentarios1058;sistema1741;parte3907;falla7185;false;inventoryNumber8716;ID6594;ID3419;ID1063
+75ae9962-0f98-4d6f-ac38-7e80c7394b3f;2025-04-08T17:31:39-0500;comentarios8103;sistema1167;parte8028;falla3658;true;inventoryNumber8716;ID7206;ID4437;ID2663
+a0cbbe66-b7c5-4327-be21-2f0047250e79;2025-04-08T17:31:39-0500;comentarios4859;sistema6292;parte4528;falla8598;false;inventoryNumber8332;ID7206;ID8970;ID1764

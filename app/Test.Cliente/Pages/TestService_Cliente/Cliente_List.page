@@ -1,0 +1,88 @@
+{
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/Cliente/Actions/TestService/Cliente/NavToCliente_Create.action",
+				"Position": "Right",
+				"SystemItem": "Add",
+				"_Type": "Control.Type.ActionBarItem"
+			}
+		],
+		"Caption": "$(L,Cliente)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Header": {
+						"UseTopPadding": false,
+						"_Type": "SectionCommon.Type.Header"
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{apellido}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"OnPress": "/Cliente/Actions/TestService/Cliente/NavToCliente_Detail.action",
+						"StatusImage": "",
+						"Title": "{ID}",
+						"Footnote": "{correo}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "",
+						"Subhead": "{nombre}",
+						"SubstatusText": "",
+						"_Type": "ObjectTable.Type.ObjectCell"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Search": {
+						"Enabled": true,
+						"Placeholder": "Item Search",
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"MinimumCharacterThreshold": 3
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": true,
+						"LoadingIndicatorText": "Loading more items, please wait..."
+					},
+					"Target": {
+						"EntitySet": "Cliente",
+						"Service": "/Cliente/Services/TestService.service",
+						"QueryOptions": ""
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"LoadingIndicator": {
+				"Enabled": true,
+				"Text": "Loading, please wait..."
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"FioriToolbar": {
+		"_Name": "FioriToolbar",
+		"_Type": "Control.Type.FioriToolbar",
+		"Items": [
+			{
+				"_Type": "FioriToolbarItem.Type.Button",
+				"_Name": "LogoutToolbarItem",
+				"Title": "Logout",
+				"OnPress": "/Cliente/Actions/Application/Logout.action"
+			}
+		]
+	},
+	"_Name": "Cliente_List"
+}

@@ -1,0 +1,23 @@
+{
+    "_Type": "Action.Type.ODataService.UpdateEntity",
+    "Target": {
+        "EntitySet": "employee",
+        "Service": "/Equipment/Services/TestService.service",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "Properties": {
+        "pernr": "#Control:pernr/#Value",
+        "bukrs": "#Control:bukrs/#Value",
+        "werks": "#Control:werks/#Value",
+        "persk": "#Control:persk/#Value",
+        "sname": "#Control:sname/#Value",
+        "ename": "#Control:ename/#Value",
+        "puestotrabajo": "#Control:puestotrabajo/#Value"
+    },
+    "UpdateLinks": [],
+    "ActionResult": {
+        "_Name": "update"
+    },
+    "OnSuccess": "/Equipment/Actions/UpdateEntitySuccessMessage.action",
+    "OnFailure": "/Equipment/Actions/UpdateEntityFailureMessage.action"
+}

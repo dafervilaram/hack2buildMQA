@@ -1,0 +1,22 @@
+{
+    "CreateLinks": [],
+    "OnFailure": "/Equipment/Actions/CreateEntityFailureMessage.action",
+    "OnSuccess": "/Equipment/Actions/CreateEntitySuccessMessage.action",
+    "Properties": {
+        "pernr": "#Control:pernr/#Value",
+        "bukrs": "#Control:bukrs/#Value",
+        "werks": "#Control:werks/#Value",
+        "persk": "#Control:persk/#Value",
+        "sname": "#Control:sname/#Value",
+        "ename": "#Control:ename/#Value",
+        "puestotrabajo": "#Control:puestotrabajo/#Value"
+    },
+    "Target": {
+        "EntitySet": "employee",
+        "Service": "/Equipment/Services/TestService.service"
+    },
+    "ActionResult": {
+        "_Name": "create"
+    },
+    "_Type": "Action.Type.ODataService.CreateEntity"
+}

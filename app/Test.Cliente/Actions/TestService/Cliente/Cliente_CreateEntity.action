@@ -1,0 +1,18 @@
+{
+    "CreateLinks": [],
+    "OnFailure": "/Cliente/Actions/CreateEntityFailureMessage.action",
+    "OnSuccess": "/Cliente/Actions/CreateEntitySuccessMessage.action",
+    "Properties": {
+        "nombre": "#Control:nombre/#Value",
+        "apellido": "#Control:apellido/#Value",
+        "correo": "#Control:correo/#Value"
+    },
+    "Target": {
+        "EntitySet": "Cliente",
+        "Service": "/Cliente/Services/TestService.service"
+    },
+    "ActionResult": {
+        "_Name": "create"
+    },
+    "_Type": "Action.Type.ODataService.CreateEntity"
+}

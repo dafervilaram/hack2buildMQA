@@ -1,0 +1,102 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/Equipment/Services/TestService.service",
+		"EntitySet": "equipment",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/Equipment/Rules/TestService/equipment/NavToequipment_Edit.js",
+				"Position": "Right",
+				"SystemItem": "Edit",
+				"_Type": "Control.Type.ActionBarItem"
+			},
+			{
+				"OnPress": "/Equipment/Rules/TestService/equipment/equipment_DeleteConfirmation.js",
+				"Position": "Right",
+				"SystemItem": "Trash",
+				"_Type": "Control.Type.ActionBarItem"
+			}
+		],
+		"Caption": "$(L,equipment_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{assetManufacturerName}",
+						"Subhead": "{inventoryNumber}",
+						"BodyText": "",
+						"Footnote": "{functionalLocation}",
+						"Description": "{manufacturerPartTypeName}",
+						"StatusText": "{equipment}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{technicalObjectType}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "inventoryNumber",
+							"Value": "{inventoryNumber}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "assetManufacturerName",
+							"Value": "{assetManufacturerName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "manufacturerPartTypeName",
+							"Value": "{manufacturerPartTypeName}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "functionalLocation",
+							"Value": "{functionalLocation}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "equipment",
+							"Value": "{equipment}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "technicalObjectType",
+							"Value": "{technicalObjectType}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "catalog",
+							"Value": "{catalog}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "puestotrabajo",
+							"Value": "{puestotrabajo}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "equipment_Detail"
+}

@@ -1,0 +1,87 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/Equipment/Services/TestService.service",
+		"EntitySet": "items",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/Equipment/Rules/TestService/items/NavToitems_Edit.js",
+				"Position": "Right",
+				"SystemItem": "Edit",
+				"_Type": "Control.Type.ActionBarItem"
+			},
+			{
+				"OnPress": "/Equipment/Rules/TestService/items/items_DeleteConfirmation.js",
+				"Position": "Right",
+				"SystemItem": "Trash",
+				"_Type": "Control.Type.ActionBarItem"
+			}
+		],
+		"Caption": "$(L,items_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ID}",
+						"Subhead": "{descripcion}",
+						"BodyText": "",
+						"Footnote": "{criterio2}",
+						"Description": "{criterio1}",
+						"StatusText": "{criterio3}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "ID",
+							"Value": "{ID}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "descripcion",
+							"Value": "{descripcion}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "criterio1",
+							"Value": "{criterio1}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "criterio2",
+							"Value": "{criterio2}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "criterio3",
+							"Value": "{criterio3}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "items_Detail"
+}

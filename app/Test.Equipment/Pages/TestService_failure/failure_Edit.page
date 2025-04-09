@@ -1,0 +1,79 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/Equipment/Services/TestService.service",
+		"EntitySet": "failure",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "Left",
+				"Caption": "Cancel",
+				"OnPress": "/Equipment/Rules/TestService/failure/failure_Cancel.js",
+				"_Type": "Control.Type.ActionBarItem"
+			},
+			{
+				"Position": "Right",
+				"SystemItem": "Save",
+				"OnPress": "/Equipment/Rules/TestService/failure/failure_UpdateEntity.js",
+				"_Type": "Control.Type.ActionBarItem"
+			}
+		],
+		"Caption": "$(L,Update_failure_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0",
+					"Visible": true,
+					"Controls": [
+						{
+							"Mode": "Datetime",
+							"_Name": "fecha",
+							"Value": "{fecha}",
+							"Caption": "fecha",
+							"_Type": "Control.Type.FormCell.DatePicker"
+						},
+						{
+							"Caption": "comentarios",
+							"_Name": "comentarios",
+							"Value": "{comentarios}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "sistema",
+							"_Name": "sistema",
+							"Value": "{sistema}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "parte",
+							"_Name": "parte",
+							"Value": "{parte}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "falla",
+							"_Name": "falla",
+							"Value": "{falla}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"_Name": "status",
+							"Caption": "status",
+							"Value": "{status}",
+							"_Type": "Control.Type.FormCell.Switch"
+						}
+					]
+				}
+			],
+			"_Name": "SectionedTable0",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "failure_Edit"
+}

@@ -1,0 +1,97 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/Equipment/Services/TestService.service",
+		"EntitySet": "employee",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/Equipment/Rules/TestService/employee/NavToemployee_Edit.js",
+				"Position": "Right",
+				"SystemItem": "Edit",
+				"_Type": "Control.Type.ActionBarItem"
+			},
+			{
+				"OnPress": "/Equipment/Rules/TestService/employee/employee_DeleteConfirmation.js",
+				"Position": "Right",
+				"SystemItem": "Trash",
+				"_Type": "Control.Type.ActionBarItem"
+			}
+		],
+		"Caption": "$(L,employee_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{sname}",
+						"Subhead": "{pernr}",
+						"BodyText": "",
+						"Footnote": "{werks}",
+						"Description": "{bukrs}",
+						"StatusText": "{persk}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{ename}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "pernr",
+							"Value": "{pernr}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "bukrs",
+							"Value": "{bukrs}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "werks",
+							"Value": "{werks}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "persk",
+							"Value": "{persk}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "sname",
+							"Value": "{sname}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "ename",
+							"Value": "{ename}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "puestotrabajo",
+							"Value": "{puestotrabajo}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "employee_Detail"
+}

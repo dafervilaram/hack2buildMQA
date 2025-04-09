@@ -1,0 +1,107 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/Equipment/Services/TestService.service",
+		"EntitySet": "timeReportProy",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/Equipment/Rules/TestService/timeReportProy/NavTotimeReportProy_Edit.js",
+				"Position": "Right",
+				"SystemItem": "Edit",
+				"_Type": "Control.Type.ActionBarItem"
+			},
+			{
+				"OnPress": "/Equipment/Rules/TestService/timeReportProy/timeReportProy_DeleteConfirmation.js",
+				"Position": "Right",
+				"SystemItem": "Trash",
+				"_Type": "Control.Type.ActionBarItem"
+			}
+		],
+		"Caption": "$(L,timeReportProy_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ID}",
+						"Subhead": "{date}",
+						"BodyText": "",
+						"Footnote": "{finalTime}",
+						"Description": "{initialTime}",
+						"StatusText": "{personas}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{equipos}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "date",
+							"Value": "{date}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "initialTime",
+							"Value": "{initialTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "finalTime",
+							"Value": "{finalTime}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "personas",
+							"Value": "{personas}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "equipos",
+							"Value": "{equipos}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "comments",
+							"Value": "{comments}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "Tiempo",
+							"Value": "{Tiempo}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "image",
+							"Value": "{image}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "IsFinalConfirmation",
+							"Value": "{IsFinalConfirmation}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "timeReportProy_Detail"
+}

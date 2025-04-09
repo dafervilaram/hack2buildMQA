@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title> Application Overview </title>
+    <script src="https://ui5.sap.com/1.129.2/resources/sap-ui-core.js" 
+            id="sap-ui-bootstrap"
+            data-sap-ui-theme="sap_horizon"
+            data-sap-ui-bindingSyntax="complex" 
+            data-sap-ui-xx-bindingSyntax="complex"
+            data-sap-ui-resourceroots='{"assets": "assets"}' 
+            data-sap-ui-libs="sap.m,sap.uxap,sap.ui.layout,sap.f">
+    </script>
+    <link rel="stylesheet" href="assets/preview.css">
+</head>
+
+<body id="body" class="sapUiBody">
+    <script>
+        "use strict";
+        sap.ui.localResources("assets");
+        (function (jQuery, App, Page) {
+            sap.ui.getCore().attachInit(function () {
+                sap.ui.define([
+                    "sap/ui/core/mvc/Controller",
+                    "sap/ui/model/json/JSONModel"
+                ], function (Controller, JSONModel) {
+                    return Controller.extend("PreviewController", {
+                        onInit: function () {
+
+                            const data = {"Services":[{"ServiceName":"TestService","DetailsURL":"./service/TestService/","Metadata":"./service/TestService/$metadata","Entities":[{"Name":"Cliente","URL":"./service/TestService/Cliente","FioriURL":""},{"Name":"equipment","URL":"./service/TestService/equipment","FioriURL":""},{"Name":"sistemas","URL":"./service/TestService/sistemas","FioriURL":""},{"Name":"partes","URL":"./service/TestService/partes","FioriURL":""},{"Name":"fallas","URL":"./service/TestService/fallas","FioriURL":""},{"Name":"failure","URL":"./service/TestService/failure","FioriURL":""},{"Name":"files","URL":"./service/TestService/files","FioriURL":""},{"Name":"items","URL":"./service/TestService/items","FioriURL":""},{"Name":"report","URL":"./service/TestService/report","FioriURL":""},{"Name":"employee","URL":"./service/TestService/employee","FioriURL":""},{"Name":"proyOrder","URL":"./service/TestService/proyOrder","FioriURL":""},{"Name":"grafOrder","URL":"./service/TestService/grafOrder","FioriURL":""},{"Name":"operMaint","URL":"./service/TestService/operMaint","FioriURL":""},{"Name":"timeReportProy","URL":"./service/TestService/timeReportProy","FioriURL":""},{"Name":"NotificacionesEnviadas","URL":"./service/TestService/NotificacionesEnviadas","FioriURL":""},{"Name":"NotificacionesEnviadasTiempos","URL":"./service/TestService/NotificacionesEnviadasTiempos","FioriURL":""},{"Name":"Proyects","URL":"./service/TestService/Proyects","FioriURL":""},{"Name":"grafProyects","URL":"./service/TestService/grafProyects","FioriURL":""},{"Name":"ProyectsActivities","URL":"./service/TestService/ProyectsActivities","FioriURL":""}],"EntitiesCount":19}]}
+                            this.getView().setModel(new JSONModel(data));
+                        }
+                    });
+                });
+                var oApp = new App()
+                var previewView = sap.ui.view({
+                    viewName: "assets.Preview",
+                    type: sap.ui.core.mvc.ViewType.XML
+                });
+                oApp.addPage(new Page({
+                    content: [previewView],
+                    showHeader: false
+                })).placeAt("content");
+            });
+
+        }(jQuery, sap.m.App, sap.m.Page));
+    </script>
+    <div id="content"></div>
+</body>
+
+</html>

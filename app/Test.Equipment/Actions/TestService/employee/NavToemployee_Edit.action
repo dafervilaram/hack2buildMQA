@@ -1,0 +1,6 @@
+{
+    "ModalPageFullscreen": false,
+    "ModalPage": true,
+    "PageToOpen": "/Equipment/Pages/TestService_employee/employee_Edit.page",
+    "_Type": "Action.Type.Navigation"
+}

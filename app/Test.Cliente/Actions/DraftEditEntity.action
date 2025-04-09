@@ -1,0 +1,19 @@
+{
+    "_Type": "Action.Type.ODataService.DraftEnabled.Edit",
+    "Target": {
+        "Service": "/Cliente/Services/TestService.service",
+        "EntitySet": "Cliente",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "ShowActivityIndicator": true,
+    "ActionResult": {
+        "_Name": "update"
+    },
+    "OnSuccess": {
+        "Name": "/Cliente/Actions/UpdateEntitySuccessMessage.action",
+        "Properties": {
+            "Message": "Draft Edit"
+        }
+    },
+    "OnFailure": "/Cliente/Actions/UpdateEntityFailureMessage.action"
+}

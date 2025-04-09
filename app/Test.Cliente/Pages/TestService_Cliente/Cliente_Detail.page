@@ -1,0 +1,77 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/Cliente/Services/TestService.service",
+		"EntitySet": "Cliente",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"OnPress": "/Cliente/Rules/TestService/Cliente/NavToCliente_Edit.js",
+				"Position": "Right",
+				"SystemItem": "Edit",
+				"_Type": "Control.Type.ActionBarItem"
+			},
+			{
+				"OnPress": "/Cliente/Rules/TestService/Cliente/Cliente_DeleteConfirmation.js",
+				"Position": "Right",
+				"SystemItem": "Trash",
+				"_Type": "Control.Type.ActionBarItem"
+			}
+		],
+		"Caption": "$(L,Cliente_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{ID}",
+						"Subhead": "{nombre}",
+						"BodyText": "",
+						"Footnote": "{correo}",
+						"Description": "{apellido}",
+						"StatusText": "",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": ""
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "nombre",
+							"Value": "{nombre}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "apellido",
+							"Value": "{apellido}",
+							"_Type": "KeyValue.Type.Item"
+						},
+						{
+							"KeyName": "correo",
+							"Value": "{correo}",
+							"_Type": "KeyValue.Type.Item"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Cliente_Detail"
+}

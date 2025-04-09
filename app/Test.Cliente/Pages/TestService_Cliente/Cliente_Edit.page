@@ -1,0 +1,60 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/Cliente/Services/TestService.service",
+		"EntitySet": "Cliente",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "Left",
+				"Caption": "Cancel",
+				"OnPress": "/Cliente/Rules/TestService/Cliente/Cliente_Cancel.js",
+				"_Type": "Control.Type.ActionBarItem"
+			},
+			{
+				"Position": "Right",
+				"SystemItem": "Save",
+				"OnPress": "/Cliente/Rules/TestService/Cliente/Cliente_UpdateEntity.js",
+				"_Type": "Control.Type.ActionBarItem"
+			}
+		],
+		"Caption": "$(L,Update_Cliente_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0",
+					"Visible": true,
+					"Controls": [
+						{
+							"Caption": "nombre",
+							"_Name": "nombre",
+							"Value": "{nombre}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "apellido",
+							"_Name": "apellido",
+							"Value": "{apellido}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "correo",
+							"_Name": "correo",
+							"Value": "{correo}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						}
+					]
+				}
+			],
+			"_Name": "SectionedTable0",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Cliente_Edit"
+}

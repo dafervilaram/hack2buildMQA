@@ -1,0 +1,21 @@
+{
+    "CreateLinks": [],
+    "OnFailure": "/Equipment/Actions/CreateEntityFailureMessage.action",
+    "OnSuccess": "/Equipment/Actions/CreateEntitySuccessMessage.action",
+    "Properties": {
+        "fecha": "#Control:fecha/#Value",
+        "comentarios": "#Control:comentarios/#Value",
+        "sistema": "#Control:sistema/#Value",
+        "parte": "#Control:parte/#Value",
+        "falla": "#Control:falla/#Value",
+        "status": "#Control:status/#Value"
+    },
+    "Target": {
+        "EntitySet": "failure",
+        "Service": "/Equipment/Services/TestService.service"
+    },
+    "ActionResult": {
+        "_Name": "create"
+    },
+    "_Type": "Action.Type.ODataService.CreateEntity"
+}

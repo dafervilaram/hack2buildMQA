@@ -1,0 +1,6 @@
+{
+    "ModalPageFullscreen": false,
+    "ModalPage": true,
+    "PageToOpen": "/Equipment/Pages/TestService_timeReportProy/timeReportProy_Edit.page",
+    "_Type": "Action.Type.Navigation"
+}

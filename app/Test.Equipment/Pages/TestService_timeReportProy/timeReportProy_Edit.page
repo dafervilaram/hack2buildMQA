@@ -1,0 +1,97 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/Equipment/Services/TestService.service",
+		"EntitySet": "timeReportProy",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": [
+			{
+				"Position": "Left",
+				"Caption": "Cancel",
+				"OnPress": "/Equipment/Rules/TestService/timeReportProy/timeReportProy_Cancel.js",
+				"_Type": "Control.Type.ActionBarItem"
+			},
+			{
+				"Position": "Right",
+				"SystemItem": "Save",
+				"OnPress": "/Equipment/Rules/TestService/timeReportProy/timeReportProy_UpdateEntity.js",
+				"_Type": "Control.Type.ActionBarItem"
+			}
+		],
+		"Caption": "$(L,Update_timeReportProy_Detail)",
+		"_Type": "Control.Type.ActionBar"
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0",
+					"Visible": true,
+					"Controls": [
+						{
+							"Mode": "Date",
+							"_Name": "date",
+							"Value": "{date}",
+							"Caption": "date",
+							"_Type": "Control.Type.FormCell.DatePicker"
+						},
+						{
+							"Caption": "initialTime",
+							"_Name": "initialTime",
+							"Value": "{initialTime}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "finalTime",
+							"_Name": "finalTime",
+							"Value": "{finalTime}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "personas",
+							"_Name": "personas",
+							"Value": "{personas}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "equipos",
+							"_Name": "equipos",
+							"Value": "{equipos}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "comments",
+							"_Name": "comments",
+							"Value": "{comments}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "Tiempo",
+							"_Name": "Tiempo",
+							"Value": "{Tiempo}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"Caption": "image",
+							"_Name": "image",
+							"Value": "{image}",
+							"_Type": "Control.Type.FormCell.SimpleProperty"
+						},
+						{
+							"_Name": "IsFinalConfirmation",
+							"Caption": "IsFinalConfirmation",
+							"Value": "{IsFinalConfirmation}",
+							"_Type": "Control.Type.FormCell.Switch"
+						}
+					]
+				}
+			],
+			"_Name": "SectionedTable0",
+			"_Type": "Control.Type.SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "timeReportProy_Edit"
+}

@@ -1,0 +1,20 @@
+{
+    "CreateLinks": [],
+    "OnFailure": "/Equipment/Actions/CreateEntityFailureMessage.action",
+    "OnSuccess": "/Equipment/Actions/CreateEntitySuccessMessage.action",
+    "Properties": {
+        "ID": "#Control:ID/#Value",
+        "descripcion": "#Control:descripcion/#Value",
+        "criterio1": "#Control:criterio1/#Value",
+        "criterio2": "#Control:criterio2/#Value",
+        "criterio3": "#Control:criterio3/#Value"
+    },
+    "Target": {
+        "EntitySet": "items",
+        "Service": "/Equipment/Services/TestService.service"
+    },
+    "ActionResult": {
+        "_Name": "create"
+    },
+    "_Type": "Action.Type.ODataService.CreateEntity"
+}

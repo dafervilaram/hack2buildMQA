@@ -1,0 +1,1174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="TestService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotation Term="Core.Links">
+                <Collection>
+                    <Record>
+                        <PropertyValue Property="rel" String="author"/>
+                        <PropertyValue Property="href" String="https://cap.cloud.sap"/>
+                    </Record>
+                </Collection>
+            </Annotation>
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Cliente" EntityType="TestService.Cliente">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="Cliente"/>
+                </EntitySet>
+                <EntitySet Name="equipment" EntityType="TestService.equipment">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="equipment"/>
+                </EntitySet>
+                <EntitySet Name="sistemas" EntityType="TestService.sistemas">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="sistemas"/>
+                </EntitySet>
+                <EntitySet Name="partes" EntityType="TestService.partes">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="partes"/>
+                </EntitySet>
+                <EntitySet Name="fallas" EntityType="TestService.fallas">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="fallas"/>
+                </EntitySet>
+                <EntitySet Name="failure" EntityType="TestService.failure">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="failure"/>
+                </EntitySet>
+                <EntitySet Name="files" EntityType="TestService.files">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="files"/>
+                </EntitySet>
+                <EntitySet Name="items" EntityType="TestService.items">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="items"/>
+                </EntitySet>
+                <EntitySet Name="report" EntityType="TestService.report">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="report"/>
+                </EntitySet>
+                <EntitySet Name="employee" EntityType="TestService.employee">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="employee"/>
+                </EntitySet>
+                <EntitySet Name="proyOrder" EntityType="TestService.proyOrder">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="proyOrder"/>
+                </EntitySet>
+                <EntitySet Name="grafOrder" EntityType="TestService.grafOrder">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="grafOrder"/>
+                </EntitySet>
+                <EntitySet Name="operMaint" EntityType="TestService.operMaint">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="operMaint"/>
+                </EntitySet>
+                <EntitySet Name="timeReportProy" EntityType="TestService.timeReportProy">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="timeReportProy"/>
+                </EntitySet>
+                <EntitySet Name="NotificacionesEnviadas" EntityType="TestService.NotificacionesEnviadas">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="NotificacionesEnviadas"/>
+                </EntitySet>
+                <EntitySet Name="NotificacionesEnviadasTiempos" EntityType="TestService.NotificacionesEnviadasTiempos">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="NotificacionesEnviadasTiempos"/>
+                </EntitySet>
+                <EntitySet Name="Proyects" EntityType="TestService.Proyects">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="Proyects"/>
+                </EntitySet>
+                <EntitySet Name="grafProyects" EntityType="TestService.grafProyects">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="grafProyects"/>
+                </EntitySet>
+                <EntitySet Name="ProyectsActivities" EntityType="TestService.ProyectsActivities">
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="ProyectsActivities"/>
+                </EntitySet>
+            </EntityContainer>
+            <EntityType Name="Cliente">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="nombre" Type="Edm.String" MaxLength="100"/>
+                <Property Name="apellido" Type="Edm.String" MaxLength="100"/>
+                <Property Name="correo" Type="Edm.String" MaxLength="100"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.Cliente"/>
+            </EntityType>
+            <EntityType Name="equipment">
+                <Key>
+                    <PropertyRef Name="inventoryNumber"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="inventoryNumber" Type="Edm.String" MaxLength="35" Nullable="false"/>
+                <Property Name="assetManufacturerName" Type="Edm.String" MaxLength="30"/>
+                <Property Name="manufacturerPartTypeName" Type="Edm.String" MaxLength="20"/>
+                <Property Name="functionalLocation" Type="Edm.String" MaxLength="40"/>
+                <Property Name="equipment" Type="Edm.String" MaxLength="25"/>
+                <Property Name="technicalObjectType" Type="Edm.String" MaxLength="18"/>
+                <Property Name="catalog" Type="Edm.String" MaxLength="8"/>
+                <Property Name="puestotrabajo" Type="Edm.String" MaxLength="10"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.equipment"/>
+            </EntityType>
+            <EntityType Name="sistemas">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="posicion" Type="Edm.String" MaxLength="6"/>
+                <Property Name="sitema" Type="Edm.String" MaxLength="9"/>
+                <Property Name="descripcion" Type="Edm.String" MaxLength="20"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.sistemas"/>
+            </EntityType>
+            <EntityType Name="partes">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="maintNotifObjPartCode" Type="Edm.String" MaxLength="4"/>
+                <Property Name="maintNotifObjPartCtlgCodeText" Type="Edm.String" MaxLength="40"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.partes"/>
+            </EntityType>
+            <EntityType Name="fallas">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="maintNotifOvwDamageCode" Type="Edm.String" MaxLength="4"/>
+                <Property Name="maintNotifOvwDamageCtlgCodeTxt" Type="Edm.String" MaxLength="40"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.fallas"/>
+            </EntityType>
+            <EntityType Name="failure">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="fecha" Type="Edm.DateTimeOffset"/>
+                <Property Name="comentarios" Type="Edm.String" MaxLength="200"/>
+                <Property Name="sistema" Type="Edm.String" MaxLength="40"/>
+                <Property Name="parte" Type="Edm.String" MaxLength="200"/>
+                <Property Name="falla" Type="Edm.String" MaxLength="200"/>
+                <Property Name="status" Type="Edm.Boolean"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.failure"/>
+            </EntityType>
+            <EntityType Name="files">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="content" Type="Edm.Stream"/>
+                <Property Name="mediaType" Type="Edm.String"/>
+                <Property Name="fileName" Type="Edm.String" MaxLength="40"/>
+                <Property Name="ID_bucket" Type="Edm.String" MaxLength="40"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.files"/>
+            </EntityType>
+            <EntityType Name="items">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="descripcion" Type="Edm.String" MaxLength="35"/>
+                <Property Name="criterio1" Type="Edm.String" MaxLength="35"/>
+                <Property Name="criterio2" Type="Edm.String" MaxLength="35"/>
+                <Property Name="criterio3" Type="Edm.String" MaxLength="35"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.items"/>
+            </EntityType>
+            <EntityType Name="report">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="fecha" Type="Edm.DateTimeOffset"/>
+                <Property Name="kilometraje_Horometro" Type="Edm.Int32"/>
+                <Property Name="ubicacion" Type="Edm.String" MaxLength="35"/>
+                <Property Name="aceite_y_combustible" Type="Edm.String" MaxLength="35"/>
+                <Property Name="liquido_refrigerante" Type="Edm.String" MaxLength="35"/>
+                <Property Name="nivel_agua" Type="Edm.String" MaxLength="35"/>
+                <Property Name="liquido_frenos" Type="Edm.String" MaxLength="35"/>
+                <Property Name="tapa_radiador_tanque" Type="Edm.String" MaxLength="35"/>
+                <Property Name="Cables_correas_mangueras" Type="Edm.String" MaxLength="35"/>
+                <Property Name="Bateria_cables_bornes" Type="Edm.String" MaxLength="35"/>
+                <Property Name="suspencion_gatos_muelles_anclajes" Type="Edm.String" MaxLength="35"/>
+                <Property Name="luces_bajas" Type="Edm.String" MaxLength="35"/>
+                <Property Name="luces_altas" Type="Edm.String" MaxLength="35"/>
+                <Property Name="luces_internas" Type="Edm.String" MaxLength="35"/>
+                <Property Name="direccionales_frente" Type="Edm.String" MaxLength="35"/>
+                <Property Name="direccionales_atras" Type="Edm.String" MaxLength="35"/>
+                <Property Name="faros_freno" Type="Edm.String" MaxLength="35"/>
+                <Property Name="faros_exploradoras" Type="Edm.String" MaxLength="35"/>
+                <Property Name="luces_parqueo" Type="Edm.String" MaxLength="35"/>
+                <Property Name="extintor" Type="Edm.String" MaxLength="35"/>
+                <Property Name="gato_cruceta_copa_perno" Type="Edm.String" MaxLength="35"/>
+                <Property Name="linterna_lamparas" Type="Edm.String" MaxLength="35"/>
+                <Property Name="kit_herramientas_completa" Type="Edm.String" MaxLength="35"/>
+                <Property Name="kit_derrames_completo" Type="Edm.String" MaxLength="35"/>
+                <Property Name="cables_arranque" Type="Edm.String" MaxLength="35"/>
+                <Property Name="senalizacion" Type="Edm.String" MaxLength="35"/>
+                <Property Name="estado_llantas_rines" Type="Edm.String" MaxLength="35"/>
+                <Property Name="llantas_repuesto_fijas" Type="Edm.String" MaxLength="35"/>
+                <Property Name="labrado_llantas" Type="Edm.String" MaxLength="35"/>
+                <Property Name="espejos_laterales" Type="Edm.String" MaxLength="35"/>
+                <Property Name="parabrisas_escobillas" Type="Edm.String" MaxLength="35"/>
+                <Property Name="puertas_ventanas" Type="Edm.String" MaxLength="35"/>
+                <Property Name="latoneria_pintura" Type="Edm.String" MaxLength="35"/>
+                <Property Name="vidrios" Type="Edm.String" MaxLength="35"/>
+                <Property Name="inyectores_agua_parabrisas" Type="Edm.String" MaxLength="35"/>
+                <Property Name="antena_gps_otros" Type="Edm.String" MaxLength="35"/>
+                <Property Name="identificacion_carga" Type="Edm.String" MaxLength="35"/>
+                <Property Name="aire_acondicionado" Type="Edm.String" MaxLength="35"/>
+                <Property Name="asientos_apoya_cabezas_tapiceria" Type="Edm.String" MaxLength="35"/>
+                <Property Name="elevavidrios_manivelas" Type="Edm.String" MaxLength="35"/>
+                <Property Name="cinturones_seguridad" Type="Edm.String" MaxLength="35"/>
+                <Property Name="puertas" Type="Edm.String" MaxLength="35"/>
+                <Property Name="bocina_pito" Type="Edm.String" MaxLength="35"/>
+                <Property Name="alarma_retroceso" Type="Edm.String" MaxLength="35"/>
+                <Property Name="botiquin" Type="Edm.String" MaxLength="35"/>
+                <Property Name="asa" Type="Edm.String" MaxLength="35"/>
+                <Property Name="placas" Type="Edm.String" MaxLength="35"/>
+                <Property Name="cuerpo" Type="Edm.String" MaxLength="35"/>
+                <Property Name="quijadas_laterales" Type="Edm.String" MaxLength="35"/>
+                <Property Name="alineamiento" Type="Edm.String" MaxLength="35"/>
+                <Property Name="mantenimiento" Type="Edm.String" MaxLength="35"/>
+                <Property Name="comentarios" Type="Edm.String" MaxLength="35"/>
+                <Property Name="status" Type="Edm.Boolean"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.report"/>
+            </EntityType>
+            <EntityType Name="employee">
+                <Key>
+                    <PropertyRef Name="pernr"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="pernr" Type="Edm.String" MaxLength="8" Nullable="false"/>
+                <Property Name="bukrs" Type="Edm.String" MaxLength="4"/>
+                <Property Name="werks" Type="Edm.String" MaxLength="4"/>
+                <Property Name="persk" Type="Edm.String" MaxLength="2"/>
+                <Property Name="sname" Type="Edm.String" MaxLength="30"/>
+                <Property Name="ename" Type="Edm.String" MaxLength="40"/>
+                <Property Name="puestotrabajo" Type="Edm.String" MaxLength="10"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.employee"/>
+            </EntityType>
+            <EntityType Name="proyOrder">
+                <Key>
+                    <PropertyRef Name="serviceOrder"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="serviceOrder" Type="Edm.String" MaxLength="11" Nullable="false"/>
+                <Property Name="purchaseOrderByCustomer" Type="Edm.String" MaxLength="35"/>
+                <Property Name="serviceOrderDescription" Type="Edm.String" MaxLength="35"/>
+                <Property Name="soldToParty" Type="Edm.String" MaxLength="10"/>
+                <Property Name="serviceReferenceEquipment" Type="Edm.String" MaxLength="25"/>
+                <Property Name="serviceRefFunctionalLocation" Type="Edm.String" MaxLength="40"/>
+                <Property Name="tipoProyecto" Type="Edm.String" MaxLength="40"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.proyOrder"/>
+            </EntityType>
+            <EntityType Name="grafOrder">
+                <Key>
+                    <PropertyRef Name="aufnr"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="aufnr" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <Property Name="serviceDocItemId" Type="Edm.String" MaxLength="60"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.grafOrder"/>
+            </EntityType>
+            <EntityType Name="operMaint">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" MaxLength="30" Nullable="false"/>
+                <Property Name="maintenanceOrderOperation" Type="Edm.String" MaxLength="4"/>
+                <Property Name="operationDescription" Type="Edm.String" MaxLength="40"/>
+                <Property Name="operationPersonResponsible" Type="Edm.String" MaxLength="8"/>
+                <Property Name="center" Type="Edm.String" MaxLength="10"/>
+                <Property Name="puestotrabajo" Type="Edm.String" MaxLength="10"/>
+                <Property Name="plant" Type="Edm.String" MaxLength="8"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.operMaint"/>
+            </EntityType>
+            <EntityType Name="timeReportProy">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="date" Type="Edm.Date"/>
+                <Property Name="initialTime" Type="Edm.TimeOfDay"/>
+                <Property Name="finalTime" Type="Edm.TimeOfDay"/>
+                <Property Name="personas" Type="Edm.String" MaxLength="60"/>
+                <Property Name="equipos" Type="Edm.String" MaxLength="60"/>
+                <Property Name="comments" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Tiempo" Type="Edm.String" MaxLength="10"/>
+                <Property Name="image" Type="Edm.String" MaxLength="40"/>
+                <Property Name="IsFinalConfirmation" Type="Edm.Boolean"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.timeReportProy"/>
+            </EntityType>
+            <EntityType Name="NotificacionesEnviadas">
+                <Key>
+                    <PropertyRef Name="NotificationId"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="NotificationId" Type="Edm.String" MaxLength="50" Nullable="false"/>
+                <Property Name="Timestamp" Type="Edm.DateTimeOffset"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.NotificacionesEnviadas"/>
+            </EntityType>
+            <EntityType Name="NotificacionesEnviadasTiempos">
+                <Key>
+                    <PropertyRef Name="NotificationTiemposId"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="NotificationTiemposId" Type="Edm.String" MaxLength="50" Nullable="false"/>
+                <Property Name="Timestamp" Type="Edm.DateTimeOffset"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.NotificacionesEnviadasTiempos"/>
+            </EntityType>
+            <EntityType Name="Proyects">
+                <Key>
+                    <PropertyRef Name="PspidEdit"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="PspidEdit" Type="Edm.String" MaxLength="11" Nullable="false"/>
+                <Property Name="Post1" Type="Edm.String" MaxLength="35"/>
+                <Property Name="Werks" Type="Edm.String" MaxLength="10"/>
+                <Property Name="tipoProyecto" Type="Edm.String" MaxLength="40"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.Proyects"/>
+            </EntityType>
+            <EntityType Name="grafProyects">
+                <Key>
+                    <PropertyRef Name="ProjectNetwork"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ProjectNetwork" Type="Edm.String" MaxLength="60" Nullable="false"/>
+                <Property Name="ProjectNetworkDescription" Type="Edm.String" MaxLength="60"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.grafProyects"/>
+            </EntityType>
+            <EntityType Name="ProyectsActivities">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="NetworkActivity" Type="Edm.String" MaxLength="60"/>
+                <Property Name="NetworkActivityDescription" Type="Edm.String" MaxLength="60"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="true"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false" DefaultValue="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="TestService.DraftAdministrativeData" ContainsTarget="true"/>
+                <NavigationProperty Name="SiblingEntity" Type="TestService.ProyectsActivities"/>
+            </EntityType>
+            <EntityType Name="DraftAdministrativeData">
+                <Key>
+                    <PropertyRef Name="DraftUUID"/>
+                </Key>
+                <Property Name="DraftUUID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="CreatedByUser" Type="Edm.String" MaxLength="256"/>
+                <Property Name="DraftIsCreatedByMe" Type="Edm.Boolean"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="LastChangedByUser" Type="Edm.String" MaxLength="256"/>
+                <Property Name="InProcessByUser" Type="Edm.String" MaxLength="256"/>
+                <Property Name="DraftIsProcessedByMe" Type="Edm.Boolean"/>
+            </EntityType>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.Cliente"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.Cliente"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.equipment"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.equipment"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.sistemas"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.sistemas"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.partes"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.partes"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.fallas"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.fallas"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.failure"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.failure"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.files"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.files"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.items"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.items"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.report"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.report"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.employee"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.employee"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.proyOrder"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.proyOrder"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.grafOrder"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.grafOrder"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.operMaint"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.operMaint"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.timeReportProy"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.timeReportProy"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.NotificacionesEnviadas"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.NotificacionesEnviadas"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.NotificacionesEnviadasTiempos"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.NotificacionesEnviadasTiempos"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.Proyects"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.Proyects"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.grafProyects"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.grafProyects"/>
+            </Action>
+            <Action Name="draftPrepare" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.ProyectsActivities"/>
+                <Parameter Name="SideEffectsQualifier" Type="Edm.String"/>
+                <ReturnType Type="TestService.ProyectsActivities"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.Cliente"/>
+                <ReturnType Type="TestService.Cliente"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.equipment"/>
+                <ReturnType Type="TestService.equipment"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.sistemas"/>
+                <ReturnType Type="TestService.sistemas"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.partes"/>
+                <ReturnType Type="TestService.partes"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.fallas"/>
+                <ReturnType Type="TestService.fallas"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.failure"/>
+                <ReturnType Type="TestService.failure"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.files"/>
+                <ReturnType Type="TestService.files"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.items"/>
+                <ReturnType Type="TestService.items"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.report"/>
+                <ReturnType Type="TestService.report"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.employee"/>
+                <ReturnType Type="TestService.employee"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.proyOrder"/>
+                <ReturnType Type="TestService.proyOrder"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.grafOrder"/>
+                <ReturnType Type="TestService.grafOrder"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.operMaint"/>
+                <ReturnType Type="TestService.operMaint"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.timeReportProy"/>
+                <ReturnType Type="TestService.timeReportProy"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.NotificacionesEnviadas"/>
+                <ReturnType Type="TestService.NotificacionesEnviadas"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.NotificacionesEnviadasTiempos"/>
+                <ReturnType Type="TestService.NotificacionesEnviadasTiempos"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.Proyects"/>
+                <ReturnType Type="TestService.Proyects"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.grafProyects"/>
+                <ReturnType Type="TestService.grafProyects"/>
+            </Action>
+            <Action Name="draftActivate" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.ProyectsActivities"/>
+                <ReturnType Type="TestService.ProyectsActivities"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.Cliente"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.Cliente"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.equipment"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.equipment"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.sistemas"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.sistemas"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.partes"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.partes"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.fallas"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.fallas"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.failure"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.failure"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.files"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.files"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.items"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.items"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.report"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.report"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.employee"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.employee"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.proyOrder"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.proyOrder"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.grafOrder"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.grafOrder"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.operMaint"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.operMaint"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.timeReportProy"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.timeReportProy"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.NotificacionesEnviadas"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.NotificacionesEnviadas"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.NotificacionesEnviadasTiempos"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.NotificacionesEnviadasTiempos"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.Proyects"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.Proyects"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.grafProyects"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.grafProyects"/>
+            </Action>
+            <Action Name="draftEdit" IsBound="true" EntitySetPath="in">
+                <Parameter Name="in" Type="TestService.ProyectsActivities"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean"/>
+                <ReturnType Type="TestService.ProyectsActivities"/>
+            </Action>
+            <Annotations Target="TestService.EntityContainer/Cliente">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.Cliente/ID">
+                <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.Cliente/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.Cliente/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.Cliente/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.Cliente/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/equipment">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.equipment/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.equipment/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.equipment/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.equipment/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/sistemas">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.sistemas/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.sistemas/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.sistemas/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.sistemas/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/partes">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.partes/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.partes/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.partes/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.partes/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/fallas">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.fallas/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.fallas/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.fallas/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.fallas/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/failure">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.failure/ID">
+                <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.failure/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.failure/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.failure/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.failure/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/files">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.files/ID">
+                <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.files/content">
+                <Annotation Term="Core.MediaType" Path="mediaType"/>
+                <Annotation Term="Core.Computed" Bool="false"/>
+            </Annotations>
+            <Annotations Target="TestService.files/mediaType">
+                <Annotation Term="Core.IsMediaType" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.files/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.files/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.files/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.files/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/items">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.items/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.items/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.items/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.items/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/report">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.report/ID">
+                <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.report/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.report/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.report/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.report/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/employee">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.employee/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.employee/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.employee/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.employee/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/proyOrder">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.proyOrder/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.proyOrder/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.proyOrder/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.proyOrder/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/grafOrder">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.grafOrder/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.grafOrder/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.grafOrder/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.grafOrder/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/operMaint">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.operMaint/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.operMaint/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.operMaint/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.operMaint/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/timeReportProy">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.timeReportProy/ID">
+                <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.timeReportProy/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.timeReportProy/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.timeReportProy/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.timeReportProy/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/NotificacionesEnviadas">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.NotificacionesEnviadas/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.NotificacionesEnviadas/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.NotificacionesEnviadas/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.NotificacionesEnviadas/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/NotificacionesEnviadasTiempos">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.NotificacionesEnviadasTiempos/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.NotificacionesEnviadasTiempos/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.NotificacionesEnviadasTiempos/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.NotificacionesEnviadasTiempos/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/Proyects">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.Proyects/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.Proyects/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.Proyects/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.Proyects/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/grafProyects">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.grafProyects/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.grafProyects/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.grafProyects/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.grafProyects/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.EntityContainer/ProyectsActivities">
+                <Annotation Term="Common.DraftRoot">
+                    <Record Type="Common.DraftRootType">
+                        <PropertyValue Property="ActivationAction" String="TestService.draftActivate"/>
+                        <PropertyValue Property="EditAction" String="TestService.draftEdit"/>
+                        <PropertyValue Property="PreparationAction" String="TestService.draftPrepare"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TestService.ProyectsActivities/ID">
+                <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.ProyectsActivities/IsActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.ProyectsActivities/HasActiveEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.ProyectsActivities/HasDraftEntity">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.ProyectsActivities/DraftAdministrativeData">
+                <Annotation Term="UI.Hidden" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TestService.DraftAdministrativeData">
+                <Annotation Term="Common.Label" String="{i18n>
+                    Draft_DraftAdministrativeData}"/>
+                </Annotations>
+                <Annotations Target="TestService.DraftAdministrativeData/DraftUUID">
+                    <Annotation Term="UI.Hidden" Bool="true"/>
+                    <Annotation Term="Common.Label" String="{i18n>
+                        Draft_DraftUUID}"/>
+                        <Annotation Term="Core.ComputedDefaultValue" Bool="true"/>
+                    </Annotations>
+                    <Annotations Target="TestService.DraftAdministrativeData/CreationDateTime">
+                        <Annotation Term="Common.Label" String="{i18n>
+                            Draft_CreationDateTime}"/>
+                        </Annotations>
+                        <Annotations Target="TestService.DraftAdministrativeData/CreatedByUser">
+                            <Annotation Term="Common.Label" String="{i18n>
+                                Draft_CreatedByUser}"/>
+                            </Annotations>
+                            <Annotations Target="TestService.DraftAdministrativeData/DraftIsCreatedByMe">
+                                <Annotation Term="UI.Hidden" Bool="true"/>
+                                <Annotation Term="Common.Label" String="{i18n>
+                                    Draft_DraftIsCreatedByMe}"/>
+                                </Annotations>
+                                <Annotations Target="TestService.DraftAdministrativeData/LastChangeDateTime">
+                                    <Annotation Term="Common.Label" String="{i18n>
+                                        Draft_LastChangeDateTime}"/>
+                                    </Annotations>
+                                    <Annotations Target="TestService.DraftAdministrativeData/LastChangedByUser">
+                                        <Annotation Term="Common.Label" String="{i18n>
+                                            Draft_LastChangedByUser}"/>
+                                        </Annotations>
+                                        <Annotations Target="TestService.DraftAdministrativeData/InProcessByUser">
+                                            <Annotation Term="Common.Label" String="{i18n>
+                                                Draft_InProcessByUser}"/>
+                                            </Annotations>
+                                            <Annotations Target="TestService.DraftAdministrativeData/DraftIsProcessedByMe">
+                                                <Annotation Term="UI.Hidden" Bool="true"/>
+                                                <Annotation Term="Common.Label" String="{i18n>
+                                                    Draft_DraftIsProcessedByMe}"/>
+                                                </Annotations>
+                                            </Schema>
+                                        </edmx:DataServices>
+                                    </edmx:Edmx>

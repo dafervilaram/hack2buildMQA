@@ -1,0 +1,21 @@
+{
+    "_Type": "Action.Type.ODataService.UpdateEntity",
+    "Target": {
+        "EntitySet": "items",
+        "Service": "/Equipment/Services/TestService.service",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "Properties": {
+        "ID": "#Control:ID/#Value",
+        "descripcion": "#Control:descripcion/#Value",
+        "criterio1": "#Control:criterio1/#Value",
+        "criterio2": "#Control:criterio2/#Value",
+        "criterio3": "#Control:criterio3/#Value"
+    },
+    "UpdateLinks": [],
+    "ActionResult": {
+        "_Name": "update"
+    },
+    "OnSuccess": "/Equipment/Actions/UpdateEntitySuccessMessage.action",
+    "OnFailure": "/Equipment/Actions/UpdateEntityFailureMessage.action"
+}

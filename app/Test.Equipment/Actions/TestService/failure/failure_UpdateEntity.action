@@ -1,0 +1,22 @@
+{
+    "_Type": "Action.Type.ODataService.UpdateEntity",
+    "Target": {
+        "EntitySet": "failure",
+        "Service": "/Equipment/Services/TestService.service",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "Properties": {
+        "fecha": "#Control:fecha/#Value",
+        "comentarios": "#Control:comentarios/#Value",
+        "sistema": "#Control:sistema/#Value",
+        "parte": "#Control:parte/#Value",
+        "falla": "#Control:falla/#Value",
+        "status": "#Control:status/#Value"
+    },
+    "UpdateLinks": [],
+    "ActionResult": {
+        "_Name": "update"
+    },
+    "OnSuccess": "/Equipment/Actions/UpdateEntitySuccessMessage.action",
+    "OnFailure": "/Equipment/Actions/UpdateEntityFailureMessage.action"
+}

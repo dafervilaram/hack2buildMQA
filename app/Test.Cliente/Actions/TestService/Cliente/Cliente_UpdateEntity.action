@@ -1,0 +1,19 @@
+{
+    "_Type": "Action.Type.ODataService.UpdateEntity",
+    "Target": {
+        "EntitySet": "Cliente",
+        "Service": "/Cliente/Services/TestService.service",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "Properties": {
+        "nombre": "#Control:nombre/#Value",
+        "apellido": "#Control:apellido/#Value",
+        "correo": "#Control:correo/#Value"
+    },
+    "UpdateLinks": [],
+    "ActionResult": {
+        "_Name": "update"
+    },
+    "OnSuccess": "/Cliente/Actions/UpdateEntitySuccessMessage.action",
+    "OnFailure": "/Cliente/Actions/UpdateEntityFailureMessage.action"
+}

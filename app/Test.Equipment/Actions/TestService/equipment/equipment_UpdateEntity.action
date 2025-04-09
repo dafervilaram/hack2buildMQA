@@ -1,0 +1,24 @@
+{
+    "_Type": "Action.Type.ODataService.UpdateEntity",
+    "Target": {
+        "EntitySet": "equipment",
+        "Service": "/Equipment/Services/TestService.service",
+        "ReadLink": "{@odata.readLink}"
+    },
+    "Properties": {
+        "inventoryNumber": "#Control:inventoryNumber/#Value",
+        "assetManufacturerName": "#Control:assetManufacturerName/#Value",
+        "manufacturerPartTypeName": "#Control:manufacturerPartTypeName/#Value",
+        "functionalLocation": "#Control:functionalLocation/#Value",
+        "equipment": "#Control:equipment/#Value",
+        "technicalObjectType": "#Control:technicalObjectType/#Value",
+        "catalog": "#Control:catalog/#Value",
+        "puestotrabajo": "#Control:puestotrabajo/#Value"
+    },
+    "UpdateLinks": [],
+    "ActionResult": {
+        "_Name": "update"
+    },
+    "OnSuccess": "/Equipment/Actions/UpdateEntitySuccessMessage.action",
+    "OnFailure": "/Equipment/Actions/UpdateEntityFailureMessage.action"
+}
